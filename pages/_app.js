@@ -1,8 +1,7 @@
-import ArtPieces from "@/Components/ArtPieces/ArtPieces";
 import GlobalStyle from "../styles";
 import useSWR from "swr";
-import ArtPiecePreview from "@/Components/ArtPiecePreview/ArtPiecePreview";
-import Spotlight from "@/Components/Spotlight/Spotlight";
+import Navigation from "@/Components/Navigation/Navigation";
+import { useState } from "react";
 
 export default function App({ Component, pageProps }) {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -14,21 +13,25 @@ export default function App({ Component, pageProps }) {
   if (error) return <div>{error.message}</div>;
   if (isLoading) return <div>loading...</div>;
 
-  let randNumber = null;
-  function randomizer() {
-    return (randNumber = Math.floor(Math.random() * data.length));
-  }
-  randomizer();
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // const [artPiecesInfo, setArtPiecesInfo] = useState();
+  // function onToggleFavorite() {
+  //   console.log("Hallo");
+  // }
 
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
-      <Spotlight
-        image={data[randNumber].imageSource}
-        artist={data[randNumber].artist}
+      {/* <SWRConfig values={{ fetcher }}> */}
+      <Navigation />
+      <Component
+        {...pageProps}
+        data={data}
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // onToggleFavorite={onToggleFavorite}
+        // setArtPiecesInfo={setArtPiecesInfo}
       />
-      <ArtPieces data={data} />
+      {/* </SWRConfig> */}
     </>
   );
 }
