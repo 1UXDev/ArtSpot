@@ -17,6 +17,7 @@ export default function FavoriteButton({ slug, setFavorites, favorites }) {
 
   const info = favorites.find((info) => info.slug === slug);
   const { isFavorite } = info || { isFavorite: false };
+  localStorage.setItem("favorites", JSON.stringify(favorites));
 
   return <button onClick={handleToggle}>{isFavorite ? "❤️" : "🖤"}</button>;
 }

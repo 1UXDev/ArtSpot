@@ -1,7 +1,7 @@
 import GlobalStyle from "../styles";
 import useSWR from "swr";
 import Navigation from "@/Components/Navigation/Navigation";
-import { useEffect, useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -10,15 +10,9 @@ export default function App({ Component, pageProps }) {
     fetcher
   );
 
-  //const localFavorites = localStorage.getItem(JSON.parse("favorites"));
-  const [favorites, setFavorites] = useState(
-    localFavorites ? localFavorites : [{}]
-  );
-
-  // Everytime favorites changes we write it to the localStorage
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
+  const [favorites, setFavorites] = useLocalStorageState("favorites", {
+    defaultValue: [{}],
+  });
 
   if (error) return <div>{error.message}</div>;
   if (isLoading) return <div>loading...</div>;

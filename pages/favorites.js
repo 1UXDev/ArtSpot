@@ -1,6 +1,4 @@
-import { useState } from "react";
-import Link from "next/link";
-import FavoriteButton from "@/Components/FavoriteButton/FavoriteButton";
+import ArtPiecePreview from "@/Components/ArtPiecePreview/ArtPiecePreview";
 
 export default function favorites({ favorites, data, setFavorites }) {
   return (
@@ -8,25 +6,17 @@ export default function favorites({ favorites, data, setFavorites }) {
       <h1>Here are your Favs</h1>
       <ul>
         {favorites.map((favoriteArt) => {
-          return data.map((CurrentDBItem) => {
-            if (favoriteArt.slug === CurrentDBItem.slug) {
+          return data.map((artwork) => {
+            if (favoriteArt.slug === artwork.slug && favoriteArt.isFavorite) {
               return (
-                <li key={CurrentDBItem.slug}>
-                  <Link href={`/art-pieces/${CurrentDBItem.slug}`}>
-                    <img
-                      src={CurrentDBItem.imageSource}
-                      alt={CurrentDBItem.name}
-                      width="200px"
-                    ></img>
-                    <h4>{CurrentDBItem.name}</h4>
-                    <p>{CurrentDBItem.artist}</p>
-                    <FavoriteButton
-                      slug={CurrentDBItem.slug}
-                      favorites={favorites}
-                      setFavorites={setFavorites}
-                    />
-                  </Link>
-                </li>
+                <ArtPiecePreview
+                  image={artwork.imageSource}
+                  title={artwork.name}
+                  artist={artwork.artist}
+                  slug={artwork.slug}
+                  favorites={favorites}
+                  setFavorites={setFavorites}
+                />
               );
             }
           });
