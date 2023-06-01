@@ -13,6 +13,7 @@ export default function HomePage({ data, favorites, setFavorites }) {
       <Spotlight
         image={data[randNumber].imageSource}
         artist={data[randNumber].artist}
+        slug={data[randNumber].slug}
       />
       <ArtPieces
         data={data}
