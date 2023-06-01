@@ -1,4 +1,5 @@
 import ArtPiecePreview from "@/Components/ArtPiecePreview/ArtPiecePreview";
+import { uid } from "uid";
 
 export default function favorites({ favorites, data, setFavorites }) {
   return (
@@ -10,6 +11,7 @@ export default function favorites({ favorites, data, setFavorites }) {
             if (favoriteArt.slug === artwork.slug && favoriteArt.isFavorite) {
               return (
                 <ArtPiecePreview
+                  key={uid()}
                   image={artwork.imageSource}
                   title={artwork.name}
                   artist={artwork.artist}

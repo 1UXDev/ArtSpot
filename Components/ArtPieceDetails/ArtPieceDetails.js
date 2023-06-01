@@ -1,6 +1,16 @@
-export default function ArtPieceDetails({ title, artist, year, genre, image }) {
+import ColorPalette from "../ColorPalette/ColorPalette";
+
+export default function ArtPieceDetails({
+  title,
+  artist,
+  year,
+  genre,
+  image,
+  colors,
+}) {
   return (
     <div>
+      <ColorPalette colors={colors} />
       <img src={image} width={600}></img>
       <h1>{title}</h1>
       <div>
