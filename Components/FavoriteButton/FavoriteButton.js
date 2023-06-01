@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function FavoriteButton({ slug, setFavorites, favorites }) {
   console.log("current Button Slug", slug);
   console.log("favorite", favorites);
@@ -18,7 +16,7 @@ export default function FavoriteButton({ slug, setFavorites, favorites }) {
   }
 
   const info = favorites.find((info) => info.slug === slug);
-  const { isFavorite } = info;
+  const { isFavorite } = info || { isFavorite: false };
 
   return <button onClick={handleToggle}>{isFavorite ? "❤️" : "🖤"}</button>;
 }
