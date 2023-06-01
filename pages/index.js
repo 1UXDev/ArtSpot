@@ -1,7 +1,7 @@
 import Spotlight from "@/Components/Spotlight/Spotlight";
 import ArtPieces from "@/Components/ArtPieces/ArtPieces";
 
-export default function HomePage({ data }) {
+export default function HomePage({ data, favorites, setFavorites }) {
   let randNumber = null;
   function randomizer() {
     return (randNumber = Math.floor(Math.random() * data.length));
@@ -14,7 +14,11 @@ export default function HomePage({ data }) {
         image={data[randNumber].imageSource}
         artist={data[randNumber].artist}
       />
-      <ArtPieces data={data} />
+      <ArtPieces
+        data={data}
+        favorites={favorites}
+        setFavorites={setFavorites}
+      />
     </div>
   );
 }

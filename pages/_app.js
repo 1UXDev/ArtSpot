@@ -10,14 +10,12 @@ export default function App({ Component, pageProps }) {
     fetcher
   );
 
+  const [favorites, setFavorites] = useState([
+    { slug: "blue-and-red", isFavorite: true },
+  ]);
+
   if (error) return <div>{error.message}</div>;
   if (isLoading) return <div>loading...</div>;
-
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // const [artPiecesInfo, setArtPiecesInfo] = useState();
-  // function onToggleFavorite() {
-  //   console.log("Hallo");
-  // }
 
   return (
     <>
@@ -27,9 +25,8 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         data={data}
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // onToggleFavorite={onToggleFavorite}
-        // setArtPiecesInfo={setArtPiecesInfo}
+        favorites={favorites}
+        setFavorites={setFavorites}
       />
       {/* </SWRConfig> */}
     </>
