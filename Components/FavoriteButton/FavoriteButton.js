@@ -1,6 +1,4 @@
 export default function FavoriteButton({ slug, setFavorites, favorites }) {
-  console.log("current Button Slug", slug);
-  console.log("favorite", favorites);
 
   function handleToggle(event) {
     event.preventDefault();

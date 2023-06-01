@@ -14,6 +14,8 @@ export default function HomePage({ data, favorites, setFavorites }) {
         image={data[randNumber].imageSource}
         artist={data[randNumber].artist}
         slug={data[randNumber].slug}
+        favorites={favorites}
+        setFavorites={setFavorites}
       />
       <ArtPieces
         data={data}
