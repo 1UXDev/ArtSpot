@@ -26,7 +26,11 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <title>ArtSpot</title>
+          <meta property="og:title" content="ArtSpot" key="title" />
+          <meta name="description" content="Random Art for you!"></meta>
+        </Head>
         <body>
           <Main />
           <NextScript />

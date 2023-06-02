@@ -1,4 +1,5 @@
 import Spotlight from "@/Components/Spotlight/Spotlight";
+import { uid } from "uid";
 
 export default function HomePage({ data, favorites, setFavorites }) {
   let randNumber = null;
@@ -13,7 +14,11 @@ export default function HomePage({ data, favorites, setFavorites }) {
       <h1>
         ArtSpot{" "}
         {colors.map((color) => {
-          return <span style={{ color: color }}>⦁</span>;
+          return (
+            <span key={uid()} style={{ color: color }}>
+              ⦁
+            </span>
+          );
         })}
       </h1>
       <Spotlight
