@@ -39,7 +39,7 @@ export default createGlobalStyle`
   }
 
   nav *:hover{
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(80,80,80,0.1);
   }
   nav a{
     color:rgb(60 ,60,60);
@@ -52,12 +52,13 @@ export default createGlobalStyle`
   }
 
   nav .active{
-    background-color: rgba(80,80,80,0.2);
-    color:black;
+    //background-color: rgba(80,80,80,0.1);
+    color:rgb(52, 116, 235);
   }
 
   nav .active:hover{
-    background-color: rgba(80,80,80,0.4);
+    background-color: rgba(80,80,80,0.1);
+    color:rgb(52, 116, 235);
   }
 
   main ul{
@@ -248,6 +249,10 @@ export default createGlobalStyle`
   position:static;
 }
 
+textarea{
+  font-family: unset;
+}
+
 .artPieceDetailsContainer{
   display:flex;
   flex-flow:column wrap;
@@ -259,7 +264,7 @@ export default createGlobalStyle`
   width:48px;
   height:48px;
   padding:unset;
-  font-size:1.8em;
+  font-size:1.5em;
   z-index:3;
   padding-top:3px;
   align-self:end;
@@ -281,10 +286,15 @@ main .Spotlight{
 padding-top:72px;
 }
 
-/* styles for the art-list / overview page*/
+/* styles for the art-list / overview page */
 
 .artList{
   padding: 0px 24px;
+}
+
+ h1.fourpx{
+  padding-bottom:4px;
+  /*adding 4 px here, to compensate height difference due to emoji usage*/
 }
 
 .artList ul{
@@ -327,15 +337,21 @@ padding-top:72px;
     width:300px;
   }
 
-  .artList img{
+  .artList .imgContainer{
     width:100%;
     height:300px;
-    object-fit:cover;
+    overflow:hidden
   }
 
-  .artList li:hover > img{
-    
+.imgContainer img{
+    object-fit:cover;
+    width:100%;
+    height:300px;
+    transition: transform .8s ease;
+  }
 
+  .artList li:hover > a > .imgContainer > img {
+    transform: scale(1.1);
   }
 
 .artList .favButton{
@@ -345,7 +361,7 @@ padding-top:72px;
   width:48px;
   height:48px;
   padding:unset;
-  font-size:1.8em;
+  font-size:1.5em;
   z-index:3;
   padding-top:3px;
   border-radius:99px;

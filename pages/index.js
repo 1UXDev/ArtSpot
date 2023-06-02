@@ -6,9 +6,16 @@ export default function HomePage({ data, favorites, setFavorites }) {
     return (randNumber = Math.floor(Math.random() * data.length));
   }
   randomizer();
+
+  let colors = data[randNumber].colors;
   return (
     <main>
-      <h1>ArtSpot ⦁ ⦁ ⦁ ⦁ ⦁</h1>
+      <h1>
+        ArtSpot{" "}
+        {colors.map((color) => {
+          return <span style={{ color: color }}>⦁</span>;
+        })}
+      </h1>
       <Spotlight
         image={data[randNumber].imageSource}
         artist={data[randNumber].artist}
