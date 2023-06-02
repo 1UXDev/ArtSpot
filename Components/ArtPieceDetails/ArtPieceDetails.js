@@ -10,10 +10,15 @@ export default function ArtPieceDetails({
   colors,
   favorites,
   setFavorites,
-  slug
+  slug,
 }) {
   return (
-    <div>
+    <div className="artPieceDetailsContainer">
+      <FavoriteButton
+        slug={slug}
+        favorites={favorites}
+        setFavorites={setFavorites}
+      />
       <img src={image}></img>
       <div className="artpieceDetails">
         <h1>{title}</h1>
@@ -28,11 +33,6 @@ export default function ArtPieceDetails({
           <p>#{genre}</p>
         </div>
       </div>
-      <FavoriteButton
-        slug={slug}
-        favorites={favorites}
-        setFavorites={setFavorites}
-      />
     </div>
   );
 }
