@@ -12,7 +12,9 @@ export default function ArtPiecePreview({
   return (
     <li key={slug}>
       <Link href={`/art-pieces/${slug}`}>
-        <img src={image} alt={title}></img>
+        <div className="imgContainer">
+          <img src={image} alt={title}></img>
+        </div>
         <h4>{title}</h4>
         <p>{artist}</p>
         <FavoriteButton
