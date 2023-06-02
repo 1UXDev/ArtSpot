@@ -17,6 +17,5 @@ export default function HomePage({ data, favorites, setFavorites }) {
         setFavorites={setFavorites}
       />
     </main>
-    </div>
   );
 }
