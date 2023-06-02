@@ -4,7 +4,10 @@ export default function Navigation() {
   return (
     <nav>
       <div>
-        <Link href="/">Artworks</Link>
+        <Link href="/">Spotlight</Link>
+      </div>
+      <div>
+        <Link href="/art-list">Artworks</Link>
       </div>
       <div>
         <Link href="/favorites">Favorites</Link>
