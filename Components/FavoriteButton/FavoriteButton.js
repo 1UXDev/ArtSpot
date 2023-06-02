@@ -1,5 +1,4 @@
 export default function FavoriteButton({ slug, setFavorites, favorites }) {
-
   function handleToggle(event) {
     event.preventDefault();
 
@@ -17,5 +16,9 @@ export default function FavoriteButton({ slug, setFavorites, favorites }) {
   const { isFavorite } = info || { isFavorite: false };
   localStorage.setItem("favorites", JSON.stringify(favorites));
 
-  return <button onClick={handleToggle}>{isFavorite ? "❤️" : "🖤"}</button>;
+  return (
+    <button onClick={handleToggle} className="favButton">
+      {isFavorite ? "❤️" : "🖤"}
+    </button>
+  );
 }

@@ -100,10 +100,10 @@ export default createGlobalStyle`
   
   .details img{
     width:100%;
-    margin-top:-60px;
+    margin-top:-108px;
   }
 
- .details .artpieceDetails{
+.artpieceDetails{
   position:relative;
   top:-48px;
   background:rgba(255,255,255, 0.7);
@@ -217,5 +217,112 @@ export default createGlobalStyle`
 .details form button{
   width:150px;
   position:static;
+}
+
+.artPieceDetailsContainer{
+  display:flex;
+  flex-flow:column wrap;
+
+}
+
+.details .favButton{
+  top:-36px;
+  width:48px;
+  height:48px;
+  padding:unset;
+  font-size:1.8em;
+  z-index:3;
+  padding-top:3px;
+  align-self:end;
+  margin-right:48px;
+}
+
+
+/* styles for the spotlight page*/
+main{
+  padding:0px 24px;
+}
+
+main a{
+  color:black;
+  text-decoration:none;
+}
+
+main .Spotlight{
+padding-top:72px;
+}
+
+/* styles for the art-list / overview page*/
+
+.artList{
+  padding: 0px 24px;
+}
+
+.artList ul{
+  display:flex;
+  flex-flow:row wrap;
+  gap:24px;
+  list-style:none;
+  padding-inline-start:unset;
+
+}
+
+.artList li {
+  background-color: white;
+  width:100%;
+  border-radius:8px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.12);
+}
+
+
+.artList li a {  
+  text-decoration:none;
+  color:black;
+  display:flex;
+  flex-flow:row wrap;}
+
+  .artList li h4{
+    width:100%;
+    margin-block-end: unset;
+  }
+
+  .artList h4, .artList p {
+    padding-left:12px;
+  }
+
+  .artList p{
+    width:300px;
+  }
+
+  .artList img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+  }
+
+.artList .favButton{
+  position:relative;
+  top:-96px;
+  left:-290px;
+  width:48px;
+  height:48px;
+  padding:unset;
+  font-size:1.8em;
+  z-index:3;
+  padding-top:3px;
+  border-radius:99px;
+    font-weight:bold;
+    z-index:98;
+    background:rgba(255,255,255, 0.7);
+    backdrop-filter: blur(8px);
+    box-shadow: 3px 3px 8px rgba(0,0,0, 0.12);
+    border:none;
+    cursor:pointer;
+}
+@media (max-width:400px){
+  .artList .favButton{
+    left:12px;
+    top: -170px;
+  }
 }
 `;

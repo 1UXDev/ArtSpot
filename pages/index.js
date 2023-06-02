@@ -8,7 +8,7 @@ export default function HomePage({ data, favorites, setFavorites }) {
   randomizer();
   return (
     <main>
-      <h1>ArtSpot</h1>
+      <h1>ArtSpot ⦁ ⦁ ⦁ ⦁</h1>
       <Spotlight
         image={data[randNumber].imageSource}
         artist={data[randNumber].artist}
