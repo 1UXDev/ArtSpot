@@ -1,4 +1,5 @@
 import ColorPalette from "../ColorPalette/ColorPalette";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 export default function ArtPieceDetails({
   title,
@@ -7,6 +8,9 @@ export default function ArtPieceDetails({
   genre,
   image,
   colors,
+  favorites,
+  setFavorites,
+  slug
 }) {
   return (
     <div>
@@ -20,6 +24,11 @@ export default function ArtPieceDetails({
       <div>
         <p>{genre}</p>
       </div>
+      <FavoriteButton
+        slug={slug}
+        favorites={favorites}
+        setFavorites={setFavorites}
+      />
     </div>
   );
 }
