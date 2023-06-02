@@ -4,7 +4,7 @@ import { uid } from "uid";
 export default function favorites({ favorites, data, setFavorites }) {
   return (
     <div>
-      <h1>Here are your Favs</h1>
+      <h1>Your Favorite Artworks</h1>
       <ul>
         {favorites.map((favoriteArt) => {
           return data.map((artwork) => {
