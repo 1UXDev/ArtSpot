@@ -24,7 +24,7 @@ export default createGlobalStyle`
     justify-content:space-around;
     width:100%;
     max-width:600px;
-    background-color:rgba(255,255,255,0.7);
+    background-color:rgba(255,255,255,0.6);
     backdrop-filter: blur(8px);
     font-family: "Roboto Condensed", sans-serif;
     text-transform:uppercase;
@@ -39,16 +39,25 @@ export default createGlobalStyle`
   }
 
   nav *:hover{
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.1);
   }
   nav a{
-    color:rgb(50,50,50);
+    color:rgb(60 ,60,60);
     font-weigth:600;
     text-decoration:none;
     font-size:1em;
   }
   nav a:hover{
-    color:rgb(0,0,0);
+    color:rgb(30,30,30);
+  }
+
+  nav .active{
+    background-color: rgba(80,80,80,0.2);
+    color:black;
+  }
+
+  nav .active:hover{
+    background-color: rgba(80,80,80,0.4);
   }
 
   main ul{
@@ -186,6 +195,26 @@ export default createGlobalStyle`
   padding-bottom:24px;
 }
 
+.details .commentContainer * {
+  animation-duration: 1s;
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8, 0.8);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+    filter: blur(0px);
+  }
+}
+
 .details .commentContainer .nothingHere {
   font-size:0.9em;
   color:gray;
@@ -272,8 +301,12 @@ padding-top:72px;
   width:100%;
   border-radius:8px;
   box-shadow: 3px 3px 8px rgba(0,0,0,0.12);
+  transition: all 0.5s ease-out;
 }
 
+.artList li:hover {
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.18);
+}
 
 .artList li a {  
   text-decoration:none;
@@ -298,6 +331,11 @@ padding-top:72px;
     width:100%;
     height:300px;
     object-fit:cover;
+  }
+
+  .artList li:hover > img{
+    
+
   }
 
 .artList .favButton{
