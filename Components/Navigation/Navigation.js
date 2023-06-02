@@ -3,12 +3,9 @@ import Link from "next/link";
 export default function Navigation() {
   return (
     <nav>
-      <div>
-        <Link href="/">Artworks</Link>
-      </div>
-      <div>
-        <Link href="/favorites">Favorites</Link>
-      </div>
+      <Link href="/">Artworks</Link>
+      <Link href="/spotlight">Spotlight</Link>
+      <Link href="/favorites">Favorites</Link>
     </nav>
   );
 }

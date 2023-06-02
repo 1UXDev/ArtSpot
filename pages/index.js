@@ -8,7 +8,7 @@ export default function HomePage({ data, favorites, setFavorites }) {
   }
   randomizer();
   return (
-    <div>
+    <main>
       <h1>ArtSpot</h1>
       <Spotlight
         image={data[randNumber].imageSource}
@@ -22,6 +22,6 @@ export default function HomePage({ data, favorites, setFavorites }) {
         favorites={favorites}
         setFavorites={setFavorites}
       />
-    </div>
+    </main>
   );
 }

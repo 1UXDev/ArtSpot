@@ -10,15 +10,19 @@ export default function ArtPieceDetails({
 }) {
   return (
     <div>
-      <ColorPalette colors={colors} />
-      <img src={image} width={600}></img>
-      <h1>{title}</h1>
-      <div>
-        <p>{artist}</p>
-        <p>{year}</p>
-      </div>
-      <div>
-        <p>{genre}</p>
+      <img src={image}></img>
+      <div className="artpieceDetails">
+        <h1>{title}</h1>
+        <div className="colorPalette">
+          <ColorPalette colors={colors} />
+        </div>
+        <div className="artistYear">
+          <p style={{ fontWeight: "bold" }}>{artist}</p>
+          <p>{year}</p>
+        </div>
+        <div className="genre">
+          <p>#{genre}</p>
+        </div>
       </div>
     </div>
   );
