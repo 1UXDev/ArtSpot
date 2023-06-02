@@ -32,26 +32,28 @@ export default function CommentForm({ slug, comments, setComments }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Your name:</label>
-        <input
-          name="name"
-          type="text"
-          placeholder="Your Name"
-          id="name"
-          required
-        ></input>
-      </div>
-      <div>
-        <label htmlFor="comment">Your Comment:</label>
-        <textarea
-          name="comment"
-          type="text"
-          rows="6"
-          placeholder="Your Comment"
-          id="comment"
-          required
-        ></textarea>
+      <div className="formContent">
+        <div>
+          <label htmlFor="name">Your name *</label>
+          <input
+            name="name"
+            type="text"
+            placeholder="How should we call you?"
+            id="name"
+            required
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="comment">Your Comment *</label>
+          <textarea
+            name="comment"
+            type="text"
+            rows="6"
+            placeholder="What are your thoughts?"
+            id="comment"
+            required
+          ></textarea>
+        </div>
       </div>
       <button type="submit">Submit</button>
     </form>

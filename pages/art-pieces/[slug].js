@@ -24,9 +24,9 @@ export default function Slug({ data, favorites,
   }
 
   return (
-    <div>
+    <div className="details">
       <button type="button" onClick={() => router.back()}>
-        Click here to go back
+        ❮ Go Back
       </button>
       <ArtPieceDetails
         image={imageSource}
@@ -39,6 +39,7 @@ export default function Slug({ data, favorites,
         setFavorites={setFavorites}
         slug={slug}
       />
+
       <Comment slug={slug} handleDelete={handleDelete} />
       <CommentForm slug={slug} comments={comments} setComments={setComments} />
     </div>
