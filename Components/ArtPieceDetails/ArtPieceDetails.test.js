@@ -18,7 +18,7 @@ describe('ArtPieceDetails', () => {
                 title="Orange Red And Green"
                 artist="Steve Jhonson"
                 year="2018"
-                genre="Abstrac Painting"
+                genre="Abstract Painting"
                 image="orange-red-and-green.jpg"
                 slug="orange-red-and-green"
                 favorites={mockFavorites}
@@ -35,7 +35,7 @@ describe('ArtPieceDetails', () => {
                 title="Orange Red And Green"
                 artist="Steve Jhonson"
                 year="2018"
-                genre="Abstrac Painting"
+                genre="Abstract Painting"
                 image="orange-red-and-green.jpg"
                 slug="orange-red-and-green"
                 favorites={mockFavorites}
@@ -52,7 +52,7 @@ describe('ArtPieceDetails', () => {
                 title="Orange Red And Green"
                 artist="Steve Jhonson"
                 year="2018"
-                genre="Abstrac Painting"
+                genre="Abstract Painting"
                 image="orange-red-and-green.jpg"
                 slug="orange-red-and-green"
                 favorites={mockFavorites}
@@ -69,7 +69,7 @@ describe('ArtPieceDetails', () => {
                 title="Orange Red And Green"
                 artist="Steve Jhonson"
                 year="2018"
-                genre="Abstrac Painting"
+                genre="Abstract Painting"
                 image="orange-red-and-green.jpg"
                 slug="orange-red-and-green"
                 favorites={mockFavorites}
@@ -86,14 +86,14 @@ describe('ArtPieceDetails', () => {
                 title="Orange Red And Green"
                 artist="Steve Jhonson"
                 year="2018"
-                genre="Abstrac Painting"
+                genre="Abstract Painting"
                 image="orange-red-and-green.jpg"
                 slug="orange-red-and-green"
                 favorites={mockFavorites}
                 colors={colors}
             />
         );
-        const genre = getByText('Abstrac Painting');
+        const genre = getByText("#Abstract Painting");
         expect(genre).toBeInTheDocument();
     });
 });
