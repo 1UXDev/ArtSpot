@@ -4,7 +4,8 @@ import CommentForm from "@/Components/CommentForm/CommentForm";
 import Comment from "@/Components/Comments/Comments";
 import useLocalStorageState from "use-local-storage-state";
 
-export default function Slug({ data }) {
+export default function Slug({ data, favorites,
+  setFavorites, }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -34,6 +35,9 @@ export default function Slug({ data }) {
         year={year}
         genre={genre}
         colors={colors}
+        favorites={favorites}
+        setFavorites={setFavorites}
+        slug={slug}
       />
 
       <Comment slug={slug} handleDelete={handleDelete} />

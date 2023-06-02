@@ -1,5 +1,4 @@
 import Spotlight from "@/Components/Spotlight/Spotlight";
-import ArtPieces from "@/Components/ArtPieces/ArtPieces";
 
 export default function HomePage({ data, favorites, setFavorites }) {
   let randNumber = null;
@@ -17,11 +16,7 @@ export default function HomePage({ data, favorites, setFavorites }) {
         favorites={favorites}
         setFavorites={setFavorites}
       />
-      <ArtPieces
-        data={data}
-        favorites={favorites}
-        setFavorites={setFavorites}
-      />
     </main>
+    </div>
   );
 }
