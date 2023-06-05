@@ -108,9 +108,31 @@ export default createGlobalStyle`
     width:17%;
   }
   
-  .details img{
-    width:100%;
+  .details .imgContainer{
+    display:flex;
+    min-height:600px;
+    max-height:90vh;
+    width:auto;
     margin-top:-108px;
+    position:relative;
+    overflow:hidden;
+    justify-content:center;
+  }
+
+  .details .imgContainer img{
+    filter:blur(8px) brightness(0.9);
+    object-fit:cover;
+    height:100%;
+    z-index:-1;
+    position:absolute;
+  }
+
+  .details .imgContainer .renderedIMG{
+    height:90vh;
+    filter:unset;
+    object-fit:contain;
+    float:center;
+    z-index:1;
   }
 
 .artpieceDetails{
@@ -122,6 +144,7 @@ export default createGlobalStyle`
   padding:2px 24px;
   box-shadow: 3px 3px 8px rgba(0,0,0, 0.12);
   border-radius:8px;
+  z-index:3;
  }
 
  .details .artistYear{
@@ -256,7 +279,6 @@ textarea{
 .artPieceDetailsContainer{
   display:flex;
   flex-flow:column wrap;
-
 }
 
 .details .favButton{

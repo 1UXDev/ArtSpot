@@ -18,7 +18,10 @@ export default function Spotlight({
               favorites={favorites}
               setFavorites={setFavorites}
             />
-            <img src={image}></img>
+            <div className="imgContainer">
+              <img src={image}></img>
+              <img src={image} className="renderedIMG"></img>
+            </div>
             <div className="artpieceDetails">
               <h1>{artist}</h1>
             </div>
